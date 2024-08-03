@@ -1,12 +1,14 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {TodoWrapper} from './components/TodoWrapper';
 import './App.css';
-import {TodoWrapper} from './components/TodoWrapper'
 
-function App() {
-  return (
-    <div className="App">
-      <TodoWrapper/>
-    </div>
-  );
-}
+const App = () => (
+    <Router>
+        <Routes>
+            <Route path="/" element={<TodoWrapper />} />
+        </Routes>
+    </Router>
+);
 
 export default App;
