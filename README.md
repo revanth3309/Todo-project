@@ -1,53 +1,57 @@
-
-System Design Overview
+# System Design Overview
 
 This React to-do application consists of several components and functionalities, each contributing to the overall system. Here’s a brief overview of the design:
 
-Components
-TodoForm (TodoForm.js)
-Purpose: Allows users to input and submit a new task.
-Functionality:
-Contains an input field for the task and a submit button.
-Uses local state to manage the input value.
-On form submission, the addTodo function is called to add the new task to the list.
+## Components
 
-Todo (Todo.js)
-Purpose: Represents a single to-do item.
-Functionality:
-Displays the task and its completion status.
-Allows users to toggle the completion status by clicking on the task.
-Provides edit and delete options through FontAwesome icons.
-The editTodo function toggles the editing state, while deleteTodo removes the task.
+### TodoForm (`TodoForm.js`)
+- **Purpose**: Allows users to input and submit a new task.
+- **Functionality**:
+  - Contains an input field for the task and a submit button.
+  - Uses local state to manage the input value.
+  - On form submission, the `addTodo` function is called to add the new task to the list.
 
-EditTodoForm (EditTodoForm.js)
-Purpose: Allows users to edit an existing task.
-Functionality:
-Displays an input field pre-filled with the current task value and a submit button.
-On form submission, the editTodo function updates the task and toggles the editing state.
+### Todo (`Todo.js`)
+- **Purpose**: Represents a single to-do item.
+- **Functionality**:
+  - Displays the task and its completion status.
+  - Allows users to toggle the completion status by clicking on the task.
+  - Provides edit and delete options through FontAwesome icons.
+  - The `editTodo` function toggles the editing state, while `deleteTodo` removes the task.
 
-TodoWrapper (TodoWrapper.js)
-Purpose: Manages the state of the to-do list and integrates other components.
-Functionality:
-Manages the list of to-dos using local state.
-Provides functions to add, toggle completion, delete, and edit tasks.
-Conditionally renders either the EditTodoForm or Todo component based on the isEditing state of each task.
-Handles state updates and interacts with child components.
+### EditTodoForm (`EditTodoForm.js`)
+- **Purpose**: Allows users to edit an existing task.
+- **Functionality**:
+  - Displays an input field pre-filled with the current task value and a submit button.
+  - On form submission, the `editTodo` function updates the task and toggles the editing state.
 
-State Management
-State:
-todos: An array of to-do objects, each containing id, task, completed, and isEditing properties.
+### TodoWrapper (`TodoWrapper.js`)
+- **Purpose**: Manages the state of the to-do list and integrates other components.
+- **Functionality**:
+  - Manages the list of to-dos using local state.
+  - Provides functions to add, toggle completion, delete, and edit tasks.
+  - Conditionally renders either the `EditTodoForm` or `Todo` component based on the `isEditing` state of each task.
+  - Handles state updates and interacts with child components.
 
-State Management Functions:
-addTodo: Adds a new task to the list with a unique ID.
-toggleComplete: Toggles the completion status of a task.
-deleteTodo: Removes a task from the list.
-editTodo: Toggles the editing state of a task.
-editTask: Updates the task’s text and toggles the editing state.
-User Interaction
-Adding a Task: Users input a task in the TodoForm, which triggers the addTodo function to add the task to the list.
-Editing a Task: Users can click the edit icon on a task to display the EditTodoForm, where they can update the task’s text.
-Toggling Completion: Clicking on a task toggles its completion status.
-Deleting a Task: Clicking the delete icon removes the task from the list.
+## State Management
+
+- **State**:
+  - `todos`: An array of to-do objects, each containing `id`, `task`, `completed`, and `isEditing` properties.
+  
+- **State Management Functions**:
+  - `addTodo`: Adds a new task to the list with a unique ID.
+  - `toggleComplete`: Toggles the completion status of a task.
+  - `deleteTodo`: Removes a task from the list.
+  - `editTodo`: Toggles the editing state of a task.
+  - `editTask`: Updates the task’s text and toggles the editing state.
+
+## User Interaction
+
+- **Adding a Task**: Users input a task in the `TodoForm`, which triggers the `addTodo` function to add the task to the list.
+- **Editing a Task**: Users can click the edit icon on a task to display the `EditTodoForm`, where they can update the task’s text.
+- **Toggling Completion**: Clicking on a task toggles its completion status.
+- **Deleting a Task**: Clicking the delete icon removes the task from the list.
+
 
 Instructions on how to set up and run the application
 # Getting Started with Create React App
